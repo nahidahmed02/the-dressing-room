@@ -10,7 +10,7 @@ import ss from '../../images/sponsors/SS.jpg'
 const Sponsors = () => {
     return (
         <div className='container'>
-            <h2 className='text-center sponsors-headline mt-4 fw-bold'>Our Respectful <span className='text-danger fst-italic'>Sponsors</span></h2>
+            <h2 className='text-center headline mt-4 fw-bold'>Our Respectful <span className='text-danger fst-italic'>Sponsors</span></h2>
             <div className='text-center'>
                 <img style={{ width: '10%', marginRight: '30px' }} src={Kookaburra} alt="" />
                 <img style={{ width: '10%', marginRight: '30px' }} src={ebay} alt="" />

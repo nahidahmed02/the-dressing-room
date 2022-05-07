@@ -1,0 +1,14 @@
+/* -------- Media Queries --------*/
+
+/* Mobile Devices */
+
+@media only screen and (max-width: 688px) {
+    .review {
+        flex-direction: column;
+    }
+
+    .review-field {
+        margin-left: 48px;
+        margin-top: 17px;
+    }
+}
