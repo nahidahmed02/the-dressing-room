@@ -1,11 +1,11 @@
 import React from 'react';
 
-const NotFound = () => {
+const About = () => {
     return (
         <div>
-            <h2>404</h2>
+            <h2>about</h2>
         </div>
     );
 };
 
-export default NotFound;
+export default About;
