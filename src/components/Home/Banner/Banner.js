@@ -1,9 +1,10 @@
 import React from 'react';
+import './Banner.css'
 
 const Banner = () => {
     return (
-        <div>
-            <h2>banner</h2>
+        <div className='banner d-flex justify-content-center align-items-center'>
+            <p className='banner-description '>Get your kits from <br /> <span className='title-in-description'>'The Dressing Room'</span>,<br /> feel the comfort and make the day yours.</p>
         </div>
     );
 };
