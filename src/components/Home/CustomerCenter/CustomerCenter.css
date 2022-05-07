@@ -8,7 +8,12 @@
     }
 
     .review-field {
-        margin-left: 48px;
+        margin-left: 15px;
         margin-top: 17px;
+    }
+
+    .review-text {
+        margin-top: -35px;
+        margin-left: -33px;
     }
 }
