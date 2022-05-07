@@ -20,7 +20,7 @@ const Header = () => {
                                     <CustomLink to='/blogs'>Blogs</CustomLink>
                                 </li>
                                 <li className="nav-item">
-                                    <CustomLink to='/about'>About</CustomLink>
+                                    <CustomLink to='/sponsors'>Sponsors</CustomLink>
                                 </li>
                             </ul>
                         </div>
