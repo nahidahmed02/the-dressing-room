@@ -1,8 +1,10 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import useItems from '../../hooks/useItems';
 import ManageSingleItem from '../ManageSingleItem/ManageSingleItem';
 
 const ManageItems = () => {
+    const navigate = useNavigate();
     const [items] = useItems()
     return (
         <div className='container'>
@@ -14,6 +16,9 @@ const ManageItems = () => {
                         item={item}
                     ></ManageSingleItem>)
                 }
+                <div className='text-center mb-5'>
+                    <button onClick={() => navigate('/additem')} className='btn btn-info btn-lg px-5'>Add New Item</button>
+                </div>
             </div>
         </div>
     );
