@@ -8,9 +8,21 @@ import { useNavigate } from 'react-router-dom';
 const Inventory = () => {
     const navigate = useNavigate();
     const [items] = useItems();
+
     return (
         <div className='container'>
             <h2 className='headline text-center mt-5 mb-4 fw-bold'>Inventory</h2>
+            {
+                items.length < 6
+                    ?
+                    <div className='text-center mb-3'>
+                        <div className="spinner-border text-success" role="status">
+                            <span className="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
+                    :
+                    ''
+            }
             <div>
                 {
                     items.slice(0, 6).map(item => <ManageSingleItem
