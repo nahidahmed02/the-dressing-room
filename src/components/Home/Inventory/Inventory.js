@@ -32,7 +32,7 @@ const Inventory = () => {
                 }
             </div>
             <div className='text-center mb-5'>
-                <button onClick={() => navigate('/manageitems')} className='btn btn-info btn-lg px-5'>Manage Inventories</button>
+                <button onClick={() => navigate('/inventory')} className='btn btn-info btn-lg px-5'>Manage Inventories</button>
             </div>
         </div>
     );

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useLocation } from 'react-router-dom';
-import './ManageSingleItem.css'
+
 
 const ManageSingleItem = ({ item }) => {
     const location = useLocation();
@@ -19,7 +19,7 @@ const ManageSingleItem = ({ item }) => {
                         <p className="card-text"><strong>Supplier:</strong> {supplier}</p>
                         <p className="card-text"><strong>Price:</strong> {price}</p>
                         {
-                            location.pathname === '/manageitems'
+                            location.pathname === '/inventory'
                                 ?
                                 <button className='btn btn-danger'>Delete</button>
                                 :

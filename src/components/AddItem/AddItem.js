@@ -19,7 +19,7 @@ const AddItem = () => {
                 <br />
                 <input type="text" value={img} className='mb-2 w-50' readOnly />
                 <br />
-                <input type="submit" value="Add" className='btn btn-info px-5 mt-2 form-btn' />
+                <input type="submit" value="Add" className='btn btn-info px-5 mt-2 btn-lg' />
             </form>
         </div>
     );
