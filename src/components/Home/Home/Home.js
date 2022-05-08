@@ -4,6 +4,7 @@ import CustomerCenter from '../CustomerCenter/CustomerCenter';
 import Expertise from '../Expertise/Expertise';
 import Inventory from '../Inventory/Inventory';
 
+// sections that will appear in the home page
 const Home = () => {
     return (
         <div>

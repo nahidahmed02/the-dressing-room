@@ -1,6 +1,7 @@
 import React from 'react';
 import './Blogs.css'
 
+// answer to the questions
 const Blogs = () => {
     return (
         <div className='container mt-5'>

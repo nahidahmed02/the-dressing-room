@@ -1,6 +1,7 @@
 import React from 'react';
 import CustomLink from '../../CustomLink/CustomLink';
 
+// impliment navbar
 const Header = () => {
     return (
         <div>

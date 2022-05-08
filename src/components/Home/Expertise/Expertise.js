@@ -2,6 +2,7 @@ import React from 'react';
 import './Expertise.css'
 import expert from '../../../images/expert.jpg'
 
+// describing the expertise of 'The Dressing Room'
 const Expertise = () => {
     return (
         <div className='container mb-5'>

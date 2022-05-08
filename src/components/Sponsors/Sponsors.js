@@ -7,6 +7,7 @@ import masuri from '../../images/sponsors/masuri.webp'
 import newbalance from '../../images/sponsors/new-balance.jpg'
 import ss from '../../images/sponsors/SS.jpg'
 
+// company that sponsored 'The Dressing Room'
 const Sponsors = () => {
     return (
         <div className='container'>

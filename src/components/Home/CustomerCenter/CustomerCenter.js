@@ -1,7 +1,9 @@
 import React from 'react';
 import './CustomerCenter.css'
 
+// to know customers feedback
 const CustomerCenter = () => {
+    // to fuction the form
     const handleReview = event => {
         event.preventDefault();
         event.target.reset();
