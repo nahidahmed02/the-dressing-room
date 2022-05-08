@@ -18,6 +18,15 @@ const Header = () => {
                                     <CustomLink to='/'>Home</CustomLink>
                                 </li>
                                 <li className="nav-item">
+                                    <CustomLink to='/manageitems'>Manage Items</CustomLink>
+                                </li>
+                                <li className="nav-item">
+                                    <CustomLink to='/additem'>Add Item</CustomLink>
+                                </li>
+                                <li className="nav-item">
+                                    <CustomLink to='/myitems'>My Items</CustomLink>
+                                </li>
+                                <li className="nav-item">
                                     <CustomLink to='/blogs'>Blogs</CustomLink>
                                 </li>
                                 <li className="nav-item">

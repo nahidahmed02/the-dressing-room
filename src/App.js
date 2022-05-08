@@ -7,6 +7,9 @@ import Home from './components/Home/Home/Home';
 import NotFound from './components/NotFound/NotFound';
 import Blogs from './components/Blogs/Blogs';
 import Sponsors from './components/Sponsors/Sponsors';
+import ManageItems from './components/ManageItems/ManageItems';
+import AddItem from './components/AddItem/AddItem';
+import MyItems from './components/MyItems/MyItems';
 
 
 function App() {
@@ -16,6 +19,9 @@ function App() {
       <Routes>
         <Route path='/' element={<Home></Home>}></Route>
         <Route path='/home' element={<Home></Home>}></Route>
+        <Route path='/manageitems' element={<ManageItems></ManageItems>}></Route>
+        <Route path='/additem' element={<AddItem></AddItem>}></Route>
+        <Route path='/myitems' element={<MyItems></MyItems>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/sponsors' element={<Sponsors></Sponsors>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
