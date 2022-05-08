@@ -1,8 +1,9 @@
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
 import './ManageSingleItem.css'
 
 const ManageSingleItem = ({ item }) => {
+    const location = useLocation();
     const { name, description, price, quantity, supplier, photo } = item;
     return (
         <div className="card mb-5 Q-A">
@@ -18,7 +19,7 @@ const ManageSingleItem = ({ item }) => {
                         <p className="card-text"><strong>Supplier:</strong> {supplier}</p>
                         <p className="card-text"><strong>Price:</strong> {price}</p>
                         {
-                            <Route path='/manageitems'></Route>
+                            location.pathname === '/manageitems'
                                 ?
                                 <button className='btn btn-danger'>Delete</button>
                                 :

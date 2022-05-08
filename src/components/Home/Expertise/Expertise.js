@@ -17,7 +17,7 @@ const Expertise = () => {
                     <h5>* 150,000+ Social Media Followers</h5>
                 </div>
                 <div className='ms-auto'>
-                    <img src={expert} alt="" />
+                    <img src={expert} className='rounded' alt="" />
                 </div>
             </div>
         </div>
