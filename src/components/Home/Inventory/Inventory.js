@@ -11,7 +11,7 @@ const Inventory = () => {
             <h2 className='headline text-center mt-5 mb-4 fw-bold'>Inventory</h2>
             <div>
                 {
-                    items.slice(0, 5).map(item => <ManageSingleItem
+                    items.slice(0, 6).map(item => <ManageSingleItem
                         key={item._id}
                         item={item}
                     ></ManageSingleItem>)
