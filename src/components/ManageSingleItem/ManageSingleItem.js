@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
 import './ManageSingleItem.css'
 
 const ManageSingleItem = ({ item }) => {
@@ -7,7 +8,7 @@ const ManageSingleItem = ({ item }) => {
         <div className="card mb-5 Q-A">
             <div className="row g-0 p-4">
                 <div className="col-md-4 my-auto">
-                    <img src={photo} className="img-fluid rounded-start" alt="" />
+                    <img src={photo} className="img-fluid rounded" alt="" />
                 </div>
                 <div className="col-md-8">
                     <div className="card-body ms-2">
@@ -16,7 +17,13 @@ const ManageSingleItem = ({ item }) => {
                         <p className="card-text"><strong>Quantity:</strong> {quantity}</p>
                         <p className="card-text"><strong>Supplier:</strong> {supplier}</p>
                         <p className="card-text"><strong>Price:</strong> {price}</p>
-                        <button className='btn btn-danger'>Delete</button>
+                        {
+                            <Route path='/manageitems'></Route>
+                                ?
+                                <button className='btn btn-danger'>Delete</button>
+                                :
+                                <button className='btn btn-success'>Update</button>
+                        }
                     </div>
                 </div>
             </div>
