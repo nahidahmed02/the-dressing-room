@@ -60,7 +60,11 @@ const Login = () => {
 
                 <p style={{ color: 'red' }}>{error?.message}</p>
                 {
-                    loading && <p>Please Wait...</p>
+                    loading && <div className='text-center mb-3'>
+                        <div className="spinner-border text-success" role="status">
+                            <span className="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
                 }
 
                 <div className='text-center d-grid'>

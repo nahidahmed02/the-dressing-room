@@ -57,16 +57,16 @@ const Signup = () => {
             </div>
         );
     }
-
-    // if (loading) {
-    //     return (
-    //         <div className='text-center mb-3'>
-    //             <div className="spinner-border text-success" role="status">
-    //                 <span className="visually-hidden">Loading...</span>
-    //             </div>
-    //         </div>
-    //     )
-    // }
+    // showing spinner while loading
+    if (loading) {
+        return (
+            <div className='text-center mb-3'>
+                <div className="spinner-border text-success" role="status">
+                    <span className="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        )
+    }
 
     return (
         <div className='card form-box mx-auto mt-4'>
