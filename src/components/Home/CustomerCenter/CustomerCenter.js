@@ -1,11 +1,14 @@
 import React from 'react';
-import './CustomerCenter.css'
+import './CustomerCenter.css';
+import 'react-toastify/dist/ReactToastify.css';
+import { toast, ToastContainer } from 'react-toastify';
 
 // to know customers feedback
 const CustomerCenter = () => {
     // to fuction the form
     const handleReview = event => {
         event.preventDefault();
+        toast('Thanks for your feedback!')
         event.target.reset();
     }
     return (
@@ -25,6 +28,7 @@ const CustomerCenter = () => {
                     </form>
                 </div>
             </div>
+            <ToastContainer />
         </div>
     );
 };

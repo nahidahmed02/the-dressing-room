@@ -2,8 +2,9 @@ import { sendPasswordResetEmail } from 'firebase/auth';
 import React, { useState } from 'react';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import auth from '../../firebase.init';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -77,6 +78,7 @@ const Login = () => {
             <p className='text-center mt-2'>
                 Don't have an account?  <Link to='/signup'>Create an account</Link>
             </p>
+            <ToastContainer />
         </div>
     );
 };
