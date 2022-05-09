@@ -1,10 +1,17 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 
 const ManageSingleItem = ({ item }) => {
+
+    const { _id, name, description, price, quantity, supplier, photo } = item;
+
     const location = useLocation();
-    const { name, description, price, quantity, supplier, photo } = item;
+    const navigate = useNavigate();
+    const navigateBtn = id => {
+        navigate(`/inventory/${id}`);
+    }
+
     return (
         <div className="card mb-5 Q-A">
             <div className="row g-0 p-4">
@@ -23,7 +30,7 @@ const ManageSingleItem = ({ item }) => {
                                 ?
                                 <button className='btn btn-danger'>Delete</button>
                                 :
-                                <button className='btn btn-success'>Update</button>
+                                <button onClick={() => navigateBtn(_id)} className='btn btn-success'>Update</button>
                         }
                     </div>
                 </div>

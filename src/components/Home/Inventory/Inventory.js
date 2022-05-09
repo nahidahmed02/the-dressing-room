@@ -1,12 +1,11 @@
 import React from 'react';
 import useItems from '../../../hooks/useItems';
 import ManageSingleItem from '../../ManageSingleItem/ManageSingleItem';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 
 // will show 6 items in the home page
 const Inventory = () => {
-    const navigate = useNavigate();
     const [items] = useItems();
 
     return (
@@ -32,7 +31,9 @@ const Inventory = () => {
                 }
             </div>
             <div className='text-center mb-5'>
-                <button onClick={() => navigate('/inventory')} className='btn btn-info btn-lg px-5'>Manage Inventories</button>
+                <Link to={'/inventory'}>
+                    <button className='btn btn-info btn-lg px-5'>Manage Inventories</button>
+                </Link>
             </div>
         </div>
     );
