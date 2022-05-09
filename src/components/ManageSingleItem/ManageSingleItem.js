@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
+import useItems from '../../hooks/useItems';
 
 
 const ManageSingleItem = ({ item }) => {
@@ -12,6 +13,23 @@ const ManageSingleItem = ({ item }) => {
         navigate(`/inventory/${id}`);
     }
 
+    const [items, setItems] = useItems();
+
+    const handleDelete = id => {
+        const proceed = window.confirm('Are you sure?')
+        if (proceed) {
+            const url = `http://localhost:5000/item/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    const remaining = items.filter(item => item._id !== id);
+                    setItems(remaining);
+                })
+        }
+    }
     return (
         <div className="card mb-5 Q-A">
             <div className="row g-0 p-4">
@@ -28,7 +46,7 @@ const ManageSingleItem = ({ item }) => {
                         {
                             location.pathname === '/inventory'
                                 ?
-                                <button className='btn btn-danger'>Delete</button>
+                                <button onClick={() => handleDelete(item._id)} className='btn btn-danger'>Delete</button>
                                 :
                                 <button onClick={() => navigateBtn(_id)} className='btn btn-success'>Update</button>
                         }
