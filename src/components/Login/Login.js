@@ -17,14 +17,13 @@ const Login = () => {
     ] = useSignInWithEmailAndPassword(auth);
 
     const navigate = useNavigate();
-
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
 
     if (user) {
         navigate(from, { replace: true });
     }
-    // get the email,password and submit
+    // set email,password and signin
     const handleEmailBlur = event => {
         setEmail(event.target.value);
     }
@@ -37,17 +36,19 @@ const Login = () => {
         event.preventDefault();
         signInWithEmailAndPassword(email, password);
     }
+
     // forgot password
     const resetPassword = () => {
         sendPasswordResetEmail(auth, email)
             .then(() => {
-                toast('Email sent')
+                toast('Please check your email')
             })
     }
+
     return (
-        <div className='card w-50 mx-auto mt-4'>
+        <div className='card form-box mx-auto mt-4'>
             <h2 className='text-center fw-bold text-info fst-italic mt-3'>Login</h2>
-            <form onSubmit={handleUserSignIn} className='w-50 mx-auto'>
+            <form onSubmit={handleUserSignIn} className='access-form mx-auto'>
                 <div className="mb-3">
                     <label htmlFor="exampleInputEmail1" className="form-label">Email address</label>
                     <input onBlur={handleEmailBlur} type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required />
@@ -70,7 +71,7 @@ const Login = () => {
                 </div>
             </form>
             <p className='text-center mt-2'>
-                Don't have an account?  <Link to='/signup' className='form-link'>Create an account</Link>
+                Don't have an account?  <Link to='/signup'>Create an account</Link>
             </p>
         </div>
     );

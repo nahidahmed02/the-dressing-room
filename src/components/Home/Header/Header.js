@@ -27,13 +27,31 @@ const Header = () => {
                                     <CustomLink to='/'>Home</CustomLink>
                                 </li>
                                 <li className="nav-item">
-                                    <CustomLink to='/inventory'>Manage Items</CustomLink>
+                                    {
+                                        user
+                                            ?
+                                            <CustomLink to='/inventory'>Manage Items</CustomLink>
+                                            :
+                                            ''
+                                    }
                                 </li>
                                 <li className="nav-item">
-                                    <CustomLink to='/additem'>Add Item</CustomLink>
+                                    {
+                                        user
+                                            ?
+                                            <CustomLink to='/additem'>Add Item</CustomLink>
+                                            :
+                                            ''
+                                    }
                                 </li>
                                 <li className="nav-item">
-                                    <CustomLink to='/myitems'>My Items</CustomLink>
+                                    {
+                                        user
+                                            ?
+                                            <CustomLink to='/myitems'>My Items</CustomLink>
+                                            :
+                                            ''
+                                    }
                                 </li>
                                 <li className="nav-item">
                                     <CustomLink to='/blogs'>Blogs</CustomLink>
@@ -45,7 +63,7 @@ const Header = () => {
                                     {
                                         user
                                             ?
-                                            <CustomLink onClick={handleSignOut}>Sign Out</CustomLink>
+                                            <button onClick={handleSignOut} className='btn-light rounded bg-success text-light'>Sign Out</button>
                                             :
                                             <CustomLink to='/login'>Login</CustomLink>
                                     }
