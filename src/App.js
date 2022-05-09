@@ -11,6 +11,8 @@ import ManageItems from './components/ManageItems/ManageItems';
 import AddItem from './components/AddItem/AddItem';
 import MyItems from './components/MyItems/MyItems';
 import ItemDetail from './components/ItemDetail/ItemDetail';
+import Login from './components/Login/Login';
+import Signup from './components/Signup/Signup';
 
 
 function App() {
@@ -26,6 +28,8 @@ function App() {
         <Route path='/myitems' element={<MyItems></MyItems>}></Route>
         <Route path='/blogs' element={<Blogs></Blogs>}></Route>
         <Route path='/sponsors' element={<Sponsors></Sponsors>}></Route>
+        <Route path='/login' element={<Login></Login>}></Route>
+        <Route path='/signup' element={<Signup></Signup>}></Route>
         <Route path='*' element={<NotFound></NotFound>}></Route>
       </Routes>
       <Footer></Footer>
