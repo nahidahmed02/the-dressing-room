@@ -3,10 +3,12 @@ import CustomLink from '../../CustomLink/CustomLink';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { signOut } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
 
 // impliment navbar
 const Header = () => {
     const [user] = useAuthState(auth);
+    const navigate = useNavigate();
 
     // logout button
     const handleSignOut = () => {
@@ -63,8 +65,9 @@ const Header = () => {
                                     {
                                         user
                                             ?
-                                            <button onClick={handleSignOut} className='btn-light rounded bg-success text-light'>Sign Out</button>
+                                            <button onClick={handleSignOut} className='px-3 fw-bold btn-light rounded bg-success text-light'>Sign Out</button>
                                             :
+                                            // <button onClick={navigate('/login')} className='px-3 fw-bold btn-light rounded bg-success text-light'>Login</button>
                                             <CustomLink to='/login'>Login</CustomLink>
                                     }
                                 </li>

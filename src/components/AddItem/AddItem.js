@@ -1,9 +1,15 @@
 import React from 'react';
+import { useAuthState } from 'react-firebase-hooks/auth';
 import { useForm } from "react-hook-form";
+import { toast, ToastContainer } from 'react-toastify';
+import auth from '../../firebase.init';
 
 
 const AddItem = () => {
+    const [user] = useAuthState(auth);
+
     const img = 'https://i.ibb.co/NZL3TdP/random.png';
+    const email = user.email;
 
     const { register, handleSubmit } = useForm();
 
@@ -20,6 +26,7 @@ const AddItem = () => {
             .then(res => res.json())
             .then(result => {
                 console.log(result);
+                toast('Item added successfully!')
             })
     };
     return (
@@ -38,8 +45,11 @@ const AddItem = () => {
                 <br />
                 <input {...register("photo")} type="text" value={img} className='mb-2 w-50' readOnly />
                 <br />
+                <input {...register("email")} type="email" value={email} className='mb-2 w-50' readOnly />
+                <br />
                 <input type="submit" value="Add" className='btn btn-info px-5 mt-2 btn-lg' />
             </form>
+            <ToastContainer />
         </div>
     );
 };

@@ -1,17 +1,8 @@
 import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
 import useItems from '../../hooks/useItems';
 
-
-const ManageSingleItem = ({ item }) => {
-
-    const { _id, name, description, price, quantity, supplier, photo } = item;
-
-    const location = useLocation();
-    const navigate = useNavigate();
-    const navigateBtn = id => {
-        navigate(`/inventory/${id}`);
-    }
+const MyItem = ({ myItem }) => {
+    const { _id, name, description, price, quantity, supplier, photo } = myItem;
 
     const [items, setItems] = useItems();
 
@@ -43,14 +34,7 @@ const ManageSingleItem = ({ item }) => {
                         <p className="card-text"><strong>Quantity:</strong> {quantity}</p>
                         <p className="card-text"><strong>Supplier:</strong> {supplier}</p>
                         <p className="card-text"><strong>Price:</strong> {price}</p>
-                        <button onClick={() => navigateBtn(_id)} className='btn btn-success'>Update</button>
-                        {
-                            location.pathname === '/inventory'
-                                ?
-                                <button onClick={() => handleDelete(item._id)} className='btn btn-danger ms-2'>Delete</button>
-                                :
-                                ''
-                        }
+                        <button onClick={() => handleDelete(_id)} className='btn btn-danger'>Delete</button>
                     </div>
                 </div>
             </div>
@@ -58,4 +42,4 @@ const ManageSingleItem = ({ item }) => {
     );
 };
 
-export default ManageSingleItem;
+export default MyItem;
