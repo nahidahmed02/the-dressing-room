@@ -4,7 +4,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../firebase.init';
 import MyItem from '../MyItem/MyItem';
 
-
+// Items added by the user
 const MyItems = () => {
     const [myItems, setMyItems] = useState([]);
     const [user] = useAuthState(auth);
@@ -17,7 +17,7 @@ const MyItems = () => {
             setMyItems(data);
         }
         getMyItems();
-    }, [user])
+    }, [user, myItems])
     return (
         <div className='container'>
             <h2 className='headline text-center mt-4 mb-4 fw-bold'>Items Added By You : {myItems.length}</h2>

@@ -21,6 +21,7 @@ const Login = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
 
+    // redirect user after login
     if (user) {
         navigate(from, { replace: true });
     }
@@ -60,6 +61,8 @@ const Login = () => {
                 </div>
 
                 <p style={{ color: 'red' }}>{error?.message}</p>
+
+                {/* showing loading spinner */}
                 {
                     loading && <div className='text-center mb-3'>
                         <div className="spinner-border text-success" role="status">

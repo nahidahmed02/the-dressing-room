@@ -3,12 +3,10 @@ import CustomLink from '../../CustomLink/CustomLink';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import auth from '../../../firebase.init';
 import { signOut } from 'firebase/auth';
-import { useNavigate } from 'react-router-dom';
 
 // impliment navbar
 const Header = () => {
     const [user] = useAuthState(auth);
-    const navigate = useNavigate();
 
     // logout button
     const handleSignOut = () => {
@@ -28,6 +26,8 @@ const Header = () => {
                                 <li className="nav-item">
                                     <CustomLink to='/'>Home</CustomLink>
                                 </li>
+
+                                {/* will appear to logged in user */}
                                 <li className="nav-item">
                                     {
                                         user
@@ -37,6 +37,8 @@ const Header = () => {
                                             ''
                                     }
                                 </li>
+
+                                {/* will appear to logged in user */}
                                 <li className="nav-item">
                                     {
                                         user
@@ -46,6 +48,8 @@ const Header = () => {
                                             ''
                                     }
                                 </li>
+
+                                {/* will appear to logged in user */}
                                 <li className="nav-item">
                                     {
                                         user
@@ -61,6 +65,8 @@ const Header = () => {
                                 <li className="nav-item">
                                     <CustomLink to='/sponsors'>Sponsors</CustomLink>
                                 </li>
+
+                                {/* signout button will show in the navbar as user logged in */}
                                 <li className="nav-item">
                                     {
                                         user

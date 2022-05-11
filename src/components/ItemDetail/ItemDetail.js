@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useParams } from 'react-router-dom';
 import useItem from '../../hooks/useItem';
 
-
+// showing item details and manage delivered and restock button
 const ItemDetail = () => {
     const { id } = useParams();
     const [item] = useItem(id);
@@ -50,6 +50,8 @@ const ItemDetail = () => {
             .then(result => {
                 console.log(result);
             })
+
+        event.target.reset();
     }
 
     return (

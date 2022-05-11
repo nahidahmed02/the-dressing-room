@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import useItems from '../../hooks/useItems';
 
 
+// showing the products of inventories and handle delete button
 const ManageSingleItem = ({ item }) => {
 
     const { _id, name, description, price, quantity, supplier, photo } = item;

@@ -1,7 +1,7 @@
 import React from 'react';
 import './Banner.css'
 
-// banner with a bg image
+// banner with a background image
 const Banner = () => {
     return (
         <div className='banner d-flex justify-content-center align-items-center'>

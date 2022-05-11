@@ -5,6 +5,7 @@ import { toast, ToastContainer } from 'react-toastify';
 
 // to know customers feedback
 const CustomerCenter = () => {
+
     // to fuction the form
     const handleReview = event => {
         event.preventDefault();
@@ -20,7 +21,7 @@ const CustomerCenter = () => {
                 </div>
                 <div className='review-field my-3'>
                     <form onSubmit={handleReview}>
-                        <input type="text" name="name" placeholder='Your Name' />
+                        <input type="email" name="email" placeholder='Your Email' />
                         <br />
                         <textarea className='mt-2' cols="30" rows="5" name='description' placeholder='Your opinion'></textarea>
                         <br />

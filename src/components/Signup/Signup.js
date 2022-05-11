@@ -38,11 +38,11 @@ const Signup = () => {
     const handleCreateUser = event => {
         event.preventDefault();
         if (password !== confirmPassword) {
-            setErrorUpdate('Sorry! Passwords did not match')
+            setErrorUpdate('Passwords did not match!')
             return
         }
         if (password.length < 6) {
-            setErrorUpdate('Please put a password of atleast 6 charecters')
+            setErrorUpdate('Password should contain atleast 6 charecters')
             return;
         }
 
@@ -98,7 +98,7 @@ const Signup = () => {
                 <div className='line'></div>
             </div>
             <div>{errorElement}</div>
-            {/* gooogle signup button */}
+            {/* ------- signup with gooogle------ */}
             <div className='text-center'>
                 <button onClick={() => signInWithGoogle()} type="submit" className="btn btn-outline-success mb-2">Sign Up with Google</button>
             </div>

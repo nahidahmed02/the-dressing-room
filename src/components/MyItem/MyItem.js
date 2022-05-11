@@ -1,6 +1,7 @@
 import React from 'react';
 import useItems from '../../hooks/useItems';
 
+// showing items added by user and handle delete button
 const MyItem = ({ myItem }) => {
     const { _id, name, description, price, quantity, supplier, photo } = myItem;
 
@@ -16,7 +17,6 @@ const MyItem = ({ myItem }) => {
                 .then(res => res.json())
                 .then(data => {
                     if (data.deletedCount > 0) {
-                        console.log('dalete');
                         const remaining = items.filter(item => item._id !== id);
                         setItems(remaining);
                     }

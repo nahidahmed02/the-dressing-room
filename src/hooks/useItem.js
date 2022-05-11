@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
+// to get single item
 const useItem = _id => {
     const [item, setItem] = useState({});
     const { id } = useParams();
@@ -10,7 +11,7 @@ const useItem = _id => {
         fetch(url)
             .then(res => res.json())
             .then(data => setItem(data))
-    }, [_id])
+    }, [_id, item])
     return [item];
 }
 

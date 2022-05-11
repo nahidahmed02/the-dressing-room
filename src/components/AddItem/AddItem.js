@@ -4,7 +4,7 @@ import { useForm } from "react-hook-form";
 import { toast, ToastContainer } from 'react-toastify';
 import auth from '../../firebase.init';
 
-
+// adding items to the inventory
 const AddItem = () => {
     const [user] = useAuthState(auth);
 
@@ -37,7 +37,7 @@ const AddItem = () => {
                 <br />
                 <textarea {...register("description")} type="text" name='description' placeholder='Description' className='mb-2 w-50' required />
                 <br />
-                <input {...register("price")} type="text" name='price' placeholder='Price' className='mb-2 w-50' required />
+                <input {...register("price")} type="text" name='price' placeholder='Price ($ price)' className='mb-2 w-50' required />
                 <br />
                 <input {...register("quantity")} type="number" name='quantity' placeholder='Quantity' className='mb-2 w-50' required />
                 <br />

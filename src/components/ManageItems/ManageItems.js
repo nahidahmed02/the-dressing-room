@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom';
 import useItems from '../../hooks/useItems';
 import ManageSingleItem from '../ManageSingleItem/ManageSingleItem';
 
+// getting items from inventory and link button of adding item
+
 const ManageItems = () => {
     const [items] = useItems()
     return (

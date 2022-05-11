@@ -11,6 +11,8 @@ const Inventory = () => {
     return (
         <div className='container'>
             <h2 className='headline text-center mt-5 mb-4 fw-bold'>Inventory</h2>
+
+            {/* loading spinner will disappear as the 6 items appear */}
             {
                 items.length < 6
                     ?
