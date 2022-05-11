@@ -15,9 +15,11 @@ const MyItem = ({ myItem }) => {
             })
                 .then(res => res.json())
                 .then(data => {
-                    console.log(data);
-                    const remaining = items.filter(item => item._id !== id);
-                    setItems(remaining);
+                    if (data.deletedCount > 0) {
+                        console.log('dalete');
+                        const remaining = items.filter(item => item._id !== id);
+                        setItems(remaining);
+                    }
                 })
         }
     }

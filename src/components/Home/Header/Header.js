@@ -67,7 +67,6 @@ const Header = () => {
                                             ?
                                             <button onClick={handleSignOut} className='px-3 fw-bold btn-light rounded bg-success text-light'>Sign Out</button>
                                             :
-                                            // <button onClick={navigate('/login')} className='px-3 fw-bold btn-light rounded bg-success text-light'>Login</button>
                                             <CustomLink to='/login'>Login</CustomLink>
                                     }
                                 </li>

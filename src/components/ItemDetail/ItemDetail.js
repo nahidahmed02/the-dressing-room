@@ -6,6 +6,52 @@ import useItem from '../../hooks/useItem';
 const ItemDetail = () => {
     const { id } = useParams();
     const [item] = useItem(id);
+
+    const handleDelivered = event => {
+        event.preventDefault();
+
+        const quantity = parseInt(item.quantity) - 1;
+        if (quantity >= 0) {
+            const updatedQuantity = { quantity };
+
+            const url = `http://localhost:5000/items/${id}`;
+            fetch(url, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(updatedQuantity),
+            })
+                .then(res => res.json())
+                .then(result => {
+                    console.log(result);
+                })
+        }
+        else {
+            return
+        }
+    }
+    const handleRestock = event => {
+        event.preventDefault();
+
+        const inputValue = parseInt(event.target.quantity.value)
+        const quantity = parseInt(item.quantity) + inputValue;
+        const updatedQuantity = { quantity };
+
+        const url = `http://localhost:5000/items/${id}`;
+        fetch(url, {
+            method: 'PUT',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(updatedQuantity),
+        })
+            .then(res => res.json())
+            .then(result => {
+                console.log(result);
+            })
+    }
+
     return (
         <div className='container'>
             <h2 className='headline text-center mt-4 mb-4 fw-bold'>Deliver and Restock - <span className='text-danger fst-italic'>{item.name}</span></h2>
@@ -19,17 +65,23 @@ const ItemDetail = () => {
                             <p className="card-text"><strong>ID:</strong> {item._id}</p>
                             <h5 className="card-title"><strong>Name:</strong> {item.name}</h5>
                             <p className="card-text"><strong>Description:</strong> {item.description}</p>
-                            <p className="card-text"><strong>Quantity:</strong> {item.quantity}</p>
+                            {
+                                item.quantity > 0
+                                    ?
+                                    <p className="card-text"><strong>Quantity:</strong> {item.quantity}</p>
+                                    :
+                                    <p className="card-text"><strong>Status:</strong><span className='text-danger fw-bold fst-italic'> SOLD</span></p>
+                            }
                             <p className="card-text"><strong>Supplier:</strong> {item.supplier}</p>
                             <p className="card-text"><strong>Price:</strong> {item.price}</p>
-                            <button className='btn btn-warning'>Delivered</button>
+                            <button onClick={handleDelivered} className='btn btn-warning'>Delivered</button>
                         </div>
                     </div>
                 </div>
                 <div className='col-md-6 p-4 h-100'>
                     <div className='restock-section card'>
                         <h3 className='text-center fw-bold text-light py-2 bg-success'>Restock the Item</h3>
-                        <form className='text-center my-4'>
+                        <form onSubmit={handleRestock} className='text-center my-4'>
                             <input className='w-50' type="number" name='quantity' placeholder='Quantity' />
                             <input className='ms-2 rounded btn-primary' type="submit" value="Restock" />
                         </form>
