@@ -14,7 +14,7 @@ const ItemDetail = () => {
         if (quantity >= 0) {
             const updatedQuantity = { quantity };
 
-            const url = `http://localhost:5000/items/${id}`;
+            const url = `https://nameless-scrubland-87121.herokuapp.com/items/${id}`;
             fetch(url, {
                 method: 'PUT',
                 headers: {
@@ -41,7 +41,7 @@ const ItemDetail = () => {
             const updatedQuantity = { quantity };
 
 
-            const url = `http://localhost:5000/items/${id}`;
+            const url = `https://nameless-scrubland-87121.herokuapp.com/items/${id}`;
             fetch(url, {
                 method: 'PUT',
                 headers: {

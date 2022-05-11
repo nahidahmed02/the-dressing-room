@@ -35,7 +35,7 @@ const Login = () => {
     const handleUserSignIn = async event => {
         event.preventDefault();
         await signInWithEmailAndPassword(email, password);
-        const { data } = await axios.post('http://localhost:5000/login', { email });
+        const { data } = await axios.post('https://nameless-scrubland-87121.herokuapp.com/login', { email });
         localStorage.setItem('accessToken', data.accessToken);
         navigate(from, { replace: true });
     }

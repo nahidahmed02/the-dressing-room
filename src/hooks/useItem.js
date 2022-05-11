@@ -7,7 +7,7 @@ const useItem = _id => {
     const { id } = useParams();
 
     useEffect(() => {
-        const url = `http://localhost:5000/items/${id}`
+        const url = `https://nameless-scrubland-87121.herokuapp.com/items/${id}`
         fetch(url)
             .then(res => res.json())
             .then(data => setItem(data))
