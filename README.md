@@ -3,7 +3,7 @@
 [Live Site Link](https://github.com/facebook/create-react-app)
 
 
-## It is warehouse management based website. It is decorated specially for cricket equipment. Where various kind of cricket accessories will found. And a logged in user can get/add/update/delete items.
+## It is a warehouse management based website. It is decorated specially for cricket equipment. Where various kind of cricket accessories will found. And a logged in user can get/add/update/delete items.
 
 
 ## Used Features and Functionality

@@ -17,20 +17,21 @@ const MyItems = () => {
         const getMyItems = async () => {
             const email = user.email;
             const url = `http://localhost:5000/myitems?email=${email}`;
-            try {
-                const { data } = await axios.get(url, {
-                    headers: {
-                        authorization: `Bearer ${localStorage.getItem('accessToken')}`
-                    }
-                });
-                setMyItems(data);
-            }
-            catch (error) {
-                if (error.response.status === 401 || error.response.status === 403) {
-                    signOut(auth);
-                    navigate('/login')
+            const { data } = await axios.get(url, {
+                headers: {
+                    authorization: `Bearer ${localStorage.getItem('accessToken')}`
                 }
-            }
+            });
+            setMyItems(data);
+            // try {
+
+            // }
+            // catch (error) {
+            //     if (error.response.status === 401 || error.response.status === 403) {
+            //         signOut(auth);
+            //         navigate('/login')
+            //     }
+            // }
         }
         getMyItems();
     }, [user, myItems])
