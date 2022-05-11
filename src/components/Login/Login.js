@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import auth from '../../firebase.init';
 import 'react-toastify/dist/ReactToastify.css';
+import axios from 'axios';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -21,10 +22,7 @@ const Login = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || "/";
 
-    // redirect user after login
-    if (user) {
-        navigate(from, { replace: true });
-    }
+
     // set email,password and signin
     const handleEmailBlur = event => {
         setEmail(event.target.value);
@@ -34,9 +32,12 @@ const Login = () => {
         setPassword(event.target.value);
     }
 
-    const handleUserSignIn = event => {
+    const handleUserSignIn = async event => {
         event.preventDefault();
-        signInWithEmailAndPassword(email, password);
+        await signInWithEmailAndPassword(email, password);
+        const { data } = await axios.post('http://localhost:5000/login', { email });
+        localStorage.setItem('accessToken', data.accessToken);
+        navigate(from, { replace: true });
     }
 
     // forgot password

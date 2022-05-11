@@ -34,24 +34,31 @@ const ItemDetail = () => {
     const handleRestock = event => {
         event.preventDefault();
 
-        const inputValue = parseInt(event.target.quantity.value)
-        const quantity = parseInt(item.quantity) + inputValue;
-        const updatedQuantity = { quantity };
 
-        const url = `http://localhost:5000/items/${id}`;
-        fetch(url, {
-            method: 'PUT',
-            headers: {
-                'Content-Type': 'application/json',
-            },
-            body: JSON.stringify(updatedQuantity),
-        })
-            .then(res => res.json())
-            .then(result => {
-                console.log(result);
+        const inputValue = parseInt(event.target.quantity.value);
+        if (inputValue >= 0) {
+            const quantity = parseInt(item.quantity) + inputValue;
+            const updatedQuantity = { quantity };
+
+
+            const url = `http://localhost:5000/items/${id}`;
+            fetch(url, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(updatedQuantity),
             })
+                .then(res => res.json())
+                .then(result => {
+                    console.log(result);
+                })
 
-        event.target.reset();
+            event.target.reset();
+        }
+        else {
+            return alert('Please put a positive number')
+        }
     }
 
     return (
