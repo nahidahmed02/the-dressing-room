@@ -3,7 +3,7 @@
 [Live Site Link](https://the-dressing-room.web.app/)
 
 
-## It is a full-stack, warehouse management based website. It is decorated specially for cricket equipment. Where various kind of cricket accessories will found.
+## It is a full-stack, warehouse management based website. It is decorated specially for cricket equipment. Where various kinds of cricket accessories will be found.
 
 
 ## Features
