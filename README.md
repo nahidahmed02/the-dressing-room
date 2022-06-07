@@ -3,19 +3,25 @@
 [Live Site Link](https://the-dressing-room.web.app/)
 
 
-## It is a warehouse management based website. It is decorated specially for cricket equipment. Where various kind of cricket accessories will found. And a logged in user can get/add/update/delete items.
+## It is a full-stack, warehouse management based website. It is decorated specially for cricket equipment. Where various kind of cricket accessories will found.
 
 
-## Used Features and Functionality
-* google authentication
-* email verification
-* password reset
-* showing error for invalid email address/password
-* private routes
-* firebase
-* mongodb
-* bootstrap
-* react
-* react firebase hooks
-* react router
-* react toast
+## Features
+* A logged in user can get/add/update/delete items
+* The user will have to verify the email when logging in
+* Google authentication available
+* The user will be able to reset password
+* Showing error for invalid email address/password
+* There are some private routes
+
+## Used Technology
+* ReactJS
+* Firebase
+* Mongodb
+* ExpressJS
+* Bootstrap
+* React Firebase Hooks
+* React-Hook-Form
+* React Router
+* React Toast
+* Heroku
