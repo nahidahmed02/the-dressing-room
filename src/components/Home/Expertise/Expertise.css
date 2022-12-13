@@ -1,0 +1,19 @@
+/* -------- Media Queries --------*/
+
+/* Mobile Devices */
+
+@media only screen and (max-width: 688px) {
+    .expertise {
+        flex-direction: column;
+    }
+
+    .expertise img {
+        width: 100%;
+        order: 1;
+        margin-bottom: 24px;
+    }
+
+    .expertise-point {
+        order: 2;
+    }
+}
