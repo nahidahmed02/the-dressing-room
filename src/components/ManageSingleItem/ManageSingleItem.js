@@ -19,7 +19,7 @@ const ManageSingleItem = ({ item }) => {
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure?')
         if (proceed) {
-            const url = `https://the-dressing-room-server.vercel.app/item/${id}`;
+            const url = `https://the-dressing-room-server.onrender.com/item/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

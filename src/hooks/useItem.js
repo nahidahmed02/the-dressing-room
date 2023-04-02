@@ -7,7 +7,7 @@ const useItem = _id => {
     const { id } = useParams();
 
     useEffect(() => {
-        const url = `https://the-dressing-room-server.vercel.app/items/${id}`
+        const url = `https://the-dressing-room-server.onrender.com/items/${id}`
         fetch(url)
             .then(res => res.json())
             .then(data => setItem(data))

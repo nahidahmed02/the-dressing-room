@@ -16,7 +16,7 @@ const MyItems = () => {
     useEffect(() => {
         const getMyItems = async () => {
             const email = user.email;
-            const url = `https://the-dressing-room-server.vercel.app/myitems?email=${email}`;
+            const url = `https://the-dressing-room-server.onrender.com/myitems?email=${email}`;
             const { data } = await axios.get(url, {
                 headers: {
                     authorization: `Bearer ${localStorage.getItem('accessToken')}`

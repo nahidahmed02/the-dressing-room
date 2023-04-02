@@ -5,7 +5,7 @@ const useItems = () => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
-        fetch('https://the-dressing-room-server.vercel.app/items')
+        fetch('https://the-dressing-room-server.onrender.com/items')
             .then(res => res.json())
             .then(data => setItems(data))
     }, [items])

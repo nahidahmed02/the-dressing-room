@@ -15,7 +15,7 @@ const AddItem = () => {
 
     const onSubmit = data => {
 
-        const url = `https://the-dressing-room-server.vercel.app/item`;
+        const url = `https://the-dressing-room-server.onrender.com/item`;
         fetch(url, {
             method: 'POST',
             headers: {

@@ -14,7 +14,7 @@ const ItemDetail = () => {
         if (quantity >= 0) {
             const updatedQuantity = { quantity };
 
-            const url = `https://the-dressing-room-server.vercel.app/items/${id}`;
+            const url = `https://the-dressing-room-server.onrender.com/items/${id}`;
             fetch(url, {
                 method: 'PUT',
                 headers: {
@@ -41,7 +41,7 @@ const ItemDetail = () => {
             const updatedQuantity = { quantity };
 
 
-            const url = `https://the-dressing-room-server.vercel.app/items/${id}`;
+            const url = `https://the-dressing-room-server.onrender.com/items/${id}`;
             fetch(url, {
                 method: 'PUT',
                 headers: {

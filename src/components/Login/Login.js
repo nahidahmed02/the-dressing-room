@@ -35,7 +35,7 @@ const Login = () => {
     const handleUserSignIn = async event => {
         event.preventDefault();
         await signInWithEmailAndPassword(email, password);
-        const { data } = await axios.post('https://the-dressing-room-server.vercel.app/login', { email });
+        const { data } = await axios.post('https://the-dressing-room-server.onrender.com/login', { email });
         localStorage.setItem('accessToken', data.accessToken);
         navigate(from, { replace: true });
     }

@@ -24,4 +24,4 @@
 * React-Hook-Form
 * React Router
 * React Toast
-* Vercel
+* Render
